@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<body>
+    <h1>{{ message }}</h1>
+    <hr>
+    {% for story in stories %}
+    <blockquote>
+        <h3>{{ story.althead }}</h3>
+        <p>{{ story.blurb }}</p>
+        <p><a href="{{ story.story_url }}">{{ story.story_url }}</a></p>
+    </blockquote>
+    {% endfor %}
+</body>
+</html>
+{% endautoescape %}
