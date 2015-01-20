@@ -18,3 +18,28 @@ HTML/CSS:
 
 Current hosted app can be found at:
 [http://sfg-info.appspot.com/](http://sfg-info.appspot.com/)
+
+### Note
+
+This is the current app.yaml with application id censored:
+
+```
+application: ******
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /.*
+  script: main.application
+```
