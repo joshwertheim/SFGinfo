@@ -39,7 +39,7 @@ class RosterPage(webapp2.RequestHandler):
             'players': r.roster_list,
         }
 
-        template = JINJA_ENVIRONMENT.get_template('roster.html')
+        template = JINJA_ENVIRONMENT.get_template('templates/roster.html')
         self.response.write(template.render(template_values))
 
 class NewsPage(webapp2.RequestHandler):
@@ -72,7 +72,7 @@ class NewsPage(webapp2.RequestHandler):
             'stories': stories,
         }
 
-        template = JINJA_ENVIRONMENT.get_template('news.html')
+        template = JINJA_ENVIRONMENT.get_template('templates/news.html')
         self.response.write(template.render(template_values))
 
 class LandingPage(webapp2.RequestHandler):
@@ -87,7 +87,7 @@ class LandingPage(webapp2.RequestHandler):
             'roster_url': roster_info,
         }
         
-        template = JINJA_ENVIRONMENT.get_template('index.html')
+        template = JINJA_ENVIRONMENT.get_template('templates/index.html')
         self.response.write(template.render(template_values))
         
 
