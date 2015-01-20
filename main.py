@@ -72,11 +72,27 @@ class NewsPage(webapp2.RequestHandler):
             'stories': stories,
         }
 
-        template = JINJA_ENVIRONMENT.get_template('index.html')
+        template = JINJA_ENVIRONMENT.get_template('news.html')
         self.response.write(template.render(template_values))
 
+class LandingPage(webapp2.RequestHandler):
+    """docstring for LandingPage"""
+    
+    def get(self):
+        news_info = "/news"
+        roster_info = "/roster"
+
+        template_values = {
+            'news_url': news_info,
+            'roster_url': roster_info,
+        }
+        
+        template = JINJA_ENVIRONMENT.get_template('index.html')
+        self.response.write(template.render(template_values))
+        
 
 application = webapp2.WSGIApplication([
+    ('/', LandingPage),
     ('/news', NewsPage),
     ('/roster', RosterPage),
 ], debug=True)
