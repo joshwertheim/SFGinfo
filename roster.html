@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+{% autoescape true %}
+<html>
+<body>
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Current Active Roster</div>
+      <div class="panel-body">
+        <p>The most up-to-date roster.</p>
+      </div>
+
+      <!-- Table -->
+      <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                <tr>
+                    <th><a href="{{ player.player_url }}">{{ player.name_first_last }}</a></th>
+                    <th>{{ player.position }}</th>
+                    <th>{{ player.status_short }}</th>
+                </tr>
+                {% endfor %}
+            </tbody>        
+      </table>
+    </div>
+
+
+    {% for story in stories %}
+    <blockquote>
+        <h3>{{ story.althead }}</h3>
+        <p>{{ story.blurb }}</p>
+        <p><a href="{{ story.story_url }}">{{ story.story_url }}</a></p>
+    </blockquote>
+    {% endfor %}
+</body>
+</html>
+{% endautoescape %}
