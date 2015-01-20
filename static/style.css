@@ -1,0 +1,10 @@
+.panel-primary>.panel-heading {
+color: #000;
+background-color: #F2552C;
+border-color: #F2552C;
+}
+
+a {
+color: #F2552C;
+text-decoration: none;
+}
