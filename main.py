@@ -89,6 +89,13 @@ class LandingPage(webapp2.RequestHandler):
         
         template = JINJA_ENVIRONMENT.get_template('templates/index.html')
         self.response.write(template.render(template_values))
+
+# class PlayerPage(webapp2.RequestHandler):
+#     """docstring for PlayerPage"""
+    
+#     def get():
+        
+        
         
 
 application = webapp2.WSGIApplication([

@@ -8,3 +8,28 @@ a {
 color: #F2552C;
 text-decoration: none;
 }
+
+div#input-box.input-group {
+    width: 100%;
+}
+
+#halfway-down {
+    height: 500px;
+    margin-top: 10%;
+}
+
+#colored-text-box {
+    background-color: #B5BAB6;
+    border-radius: 10px;
+    padding-left: 10px;
+    width: 40%;
+    font-weight: 900;
+}
+
+#top-page-link-space {
+    width: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
