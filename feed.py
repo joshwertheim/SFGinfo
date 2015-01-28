@@ -1,6 +1,3 @@
-# usage:
-# currently meant to be run alongside sandlotbot
-
 import urllib2
 import json
 
