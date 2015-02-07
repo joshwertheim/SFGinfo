@@ -21,11 +21,17 @@ div#input-box.input-group {
     margin-right: auto;
 }
 
+#main-page-twitter-feed {
+    float: right;
+    width: 300px;
+    padding-right: 1em;
+}
+
 #link-list{
     background: #F0F0F0;   
     padding: 8px;
-    border-top: 2px solid #ff9600;
-    border-bottom: 2px solid #ff9600;
+    border: 2px solid #ff9600;
+    /*border-bottom: 2px solid #ff9600;*/
 }
 
 #link-list > li {
