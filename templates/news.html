@@ -2,7 +2,7 @@
 {% autoescape true %}
 <html>
     <head>
-        <!-- <link rel="stylesheet" type="text/css" href="../static/style.css"> -->
+        <link type="text/css" rel="stylesheet" href="static/style.css"/>
         <link rel="apple-touch-icon" sizes="57x57" href="static/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="static/apple-touch-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="static/apple-touch-icon-72x72.png">
@@ -21,16 +21,17 @@
         <meta name="msapplication-TileImage" content="static/mstile-144x144.png">
         <meta name="theme-color" content="#ffffff">
     </head>
-    <body>
+    <body id="headlines">
         <h1>{{ message }}</h1>
         <hr>
-        {% for story in stories %}
-        <blockquote>
-            <h3>{{ story.althead }}</h3>
-            <p>{{ story.blurb }}</p>
-            <p><a href="{{ story.story_url }}">{{ story.story_url }}</a></p>
-        </blockquote>
-        {% endfor %}
+        <div id="headline-block">
+            {% for story in stories %}
+                <h3 id="headlines-h"><span>{{ story.althead }}</span></h3>
+                <p>{{ story.blurb }}</p>
+                <p id="headlines-links"><a href="{{ story.story_url }}">Read More</a></p>
+                <hr>
+            {% endfor %}
+        </div>
     </body>
 </html>
 {% endautoescape %}

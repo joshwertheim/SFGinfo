@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 .panel-primary>.panel-heading {
 color: #000;
 background-color: #F2552C;
@@ -81,4 +83,33 @@ div#input-box.input-group {
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+#headline-block {
+    background: #ff9600;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
+
+body#headlines {
+    width: 500px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#headlines-links > a {
+    color: #b12d0b;
+    text-decoration: underline;
+}
+
+#headlines-links > a:hover {
+    color: #3A3536;
+    text-decoration: underline;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
 }
