@@ -17,7 +17,7 @@ HTML/CSS:
 * [Bootstrap](http://getbootstrap.com/) 
 
 Current hosted app can be found at:
-[http://sfg-info.appspot.com/](http://sfg-info.appspot.com/)
+[https://sfg-info.appspot.com/](http://sfg-info.appspot.com/)
 
 ### Note
 
