@@ -7,14 +7,17 @@ Still very much a work in progress. I'm planning to make it look a lot nicer. It
 
 Upon opening, its root index is simple with just two links. One goes to the news page and the other goes to the roster page.
 
-#### Libraries & Frameworks
+#### Libraries, Frameworks & and Tools 
 
 Python:
 * [webapp2](https://webapp-improved.appspot.com/)
 * [jinja2](http://jinja.pocoo.org/docs/dev/)
 
 HTML/CSS:
-* [Bootstrap](http://getbootstrap.com/) 
+* [Bootstrap](http://getbootstrap.com/)
+
+Database:
+* [Google Cloud Datastore (NoSQL)](https://cloud.google.com/datastore/docs)
 
 Current hosted app can be found at:
 [https://sfg-info.appspot.com/](https://sfg-info.appspot.com/)
