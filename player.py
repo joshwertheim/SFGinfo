@@ -70,32 +70,3 @@ class Roster(object):
                 p.put()
             except KeyError, e:
                 print 'KeyError - reason "%s"' % str(e)
-
-
-# from google.appengine.api import urlfetch
-
-# class Player(object):
-#     """docstring for Player"""
-
-#     name_first_last = ""
-#     player_id = ""
-#     position = ""
-#     status_short = ""
-#     player_url = ""
-#     player_banner = ""
-#     player_mugshot_url = ""
-
-#     def __init__(self, name_first_last, player_id, position, status_short):
-#         self.name_first_last = name_first_last
-#         self.player_id = player_id
-#         self.position = position
-#         self.status_short = status_short
-#         self.player_url = "http://www.mlb.com/team/player.jsp?player_id=%s" % (player_id)
-#         self.player_banner = "http://giants.mlb.com/images/players/525x330/%s.jpg" % (player_id)
-
-        # result = urlfetch.fetch("http://www.mlb.com/images/players/mugshot/ph_%s.jpg" % (player_id))
-
-        # if result.status_code == 404:
-        #     self.player_mugshot_url = "../static/images/mugshot_placeholder.png"
-        # else:
-        #     self.player_mugshot_url = "http://www.mlb.com/images/players/mugshot/ph_%s.jpg" % (player_id)
