@@ -30,8 +30,6 @@ class Roster(object):
         # print feed.formatted_response_data
 
     def prepare_players(self):
-        print 'testing'
-
         self.run = True
         roster_all = self.loaded_json["roster_all"]
         roster_results = roster_all["queryResults"]
@@ -45,6 +43,7 @@ class Roster(object):
                 status_short = plr["status_short"]
                 mugshot_url = ""
                 thumb = ""
+                print name_first_last
 
                 result = urlfetch.fetch("http://www.mlb.com/images/players/mugshot/ph_%s.jpg" % (player_id))
 

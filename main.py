@@ -18,17 +18,19 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class Testrr(object):
+    check = False
+
 class RosterPage(webapp2.RequestHandler):
     """docstring for RosterPage"""
     def get(self):
         r = Roster()
-        q = Player.all()
-        players = q.fetch(limit=62)
-
-        if players == None:
+        if not Testrr.check:    
             r.prepare_players()
-            q = Player.all()
-            players = q.fetch(limit=62)
+            Testrr.check = True
+        q = Player.all()
+        q.order('first_last')
+        players = q.fetch(limit=62)
 
         template_values = {
             'players': players,
