@@ -43,7 +43,11 @@
                 <tbody>
                     {% for player in players %}
                     <tr>
-                        <th><a href="{{ player.player_url }}">{{ player.name_first_last }}</a></th>
+                        <th style="width: 40px;">
+                            <img src="{{ player.mugshot_url }}" />
+                            <br>
+                            <a href="{{ player.url }}">{{ player.first_last }}</a>
+                        </th>
                         <th>{{ player.position }}</th>
                         <th>{{ player.status_short }}</th>
                     </tr>
@@ -51,14 +55,6 @@
                 </tbody>        
           </table>
         </div>
-
-        {% for story in stories %}
-        <blockquote>
-            <h3>{{ story.althead }}</h3>
-            <p>{{ story.blurb }}</p>
-            <p><a href="{{ story.story_url }}">{{ story.story_url }}</a></p>
-        </blockquote>
-        {% endfor %}
     </body>
 </html>
 {% endautoescape %}

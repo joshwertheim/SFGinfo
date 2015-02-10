@@ -4,7 +4,6 @@ class Roster(object):
     """docstring for Roster"""
 
     loaded_json = ""
-    roster_list = list()
     
     def __init__(self):
         self.load_roster_url()
