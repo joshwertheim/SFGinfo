@@ -43,7 +43,6 @@ class Roster(object):
                 status_short = plr["status_short"]
                 mugshot_url = ""
                 thumb = ""
-                print name_first_last
 
                 result = urlfetch.fetch("http://www.mlb.com/images/players/mugshot/ph_%s.jpg" % (player_id))
 

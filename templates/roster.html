@@ -31,29 +31,38 @@
             
           </div>
 
-          <!-- Table -->
-          <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for player in players %}
-                    <tr>
-                        <th style="width: 40px;">
-                            <img src="{{ player.mugshot_url }}" />
-                            <br>
-                            <a href="{{ player.url }}">{{ player.first_last }}</a>
-                        </th>
-                        <th>{{ player.position }}</th>
-                        <th>{{ player.status_short }}</th>
-                    </tr>
-                    {% endfor %}
-                </tbody>        
-          </table>
+            <div id="roster-content">
+              <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for player in players %}
+                        <tr>
+                            <th style="width: 40px;">
+                                <img src="{{ player.mugshot_url }}" />
+                                <br>
+                                <a href="{{ player.url }}">{{ player.first_last }}</a>
+                            </th>
+                            <th>{{ player.position }}</th>
+                            <th>{{ player.status_short }}</th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>        
+                </table>
+            </div>
+        </div>
+        <div id="footer-main">
+            <p>
+                <a href="https://github.com/joshwertheim/SFGinfo" target="_blank">SFGinfo</a> &mdash; By Joshua Wertheim
+                <br />
+                v1.0 &bull; 02/10/2015
+            </p>
         </div>
     </body>
 </html>

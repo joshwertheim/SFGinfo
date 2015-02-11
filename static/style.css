@@ -16,9 +16,8 @@ div#input-box.input-group {
 }
 
 #main-page {
-    width: 400px;
+    width: 500px;
     margin-top: auto;
-    margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
 }
@@ -27,12 +26,23 @@ div#input-box.input-group {
     float: right;
     width: 300px;
     padding-right: 1em;
+    padding-top: 2em;
 }
 
-#link-list{
+#nav {
+    width: 400px;
+    text-align: center;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#link-list {
     background: #F0F0F0;   
-    padding: 8px;
     border: 2px solid #ff9600;
+    text-align: center;
+    padding: 0.5em;
+    white-space: nowrap;
+    width: 100%;
     /*border-bottom: 2px solid #ff9600;*/
 }
 
@@ -108,6 +118,21 @@ body#headlines {
 #headlines-links > a:hover {
     color: #3A3536;
     text-decoration: underline;
+}
+
+#roster-content {
+    
+}
+
+#footer-main {
+    width: 400px;
+    /*position: fixed;*/
+    bottom: 0;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: small;
 }
 
 * {

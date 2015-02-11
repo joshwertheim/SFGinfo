@@ -22,6 +22,12 @@
         <meta name="theme-color" content="#ffffff">
     </head>
     <body id="headlines">
+        <div id="nav">
+            <ul id="link-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/roster">Current Active Roster</a></li>
+            </ul>
+        </div>
         <h1>{{ message }}</h1>
         <hr>
         <div id="headline-block">
@@ -32,6 +38,14 @@
                 <hr>
             {% endfor %}
         </div>
+
     </body>
+    <div id="footer-main">
+        <p>
+            <a href="https://github.com/joshwertheim/SFGinfo" target="_blank">SFGinfo</a> &mdash; By Joshua Wertheim
+            <br />
+            v1.0 &bull; 02/10/2015
+        </p>
+    </div>
 </html>
 {% endautoescape %}
