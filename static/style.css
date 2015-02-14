@@ -120,10 +120,6 @@ body#headlines {
     text-decoration: underline;
 }
 
-#roster-content {
-    
-}
-
 #footer-main {
     width: 400px;
     /*position: fixed;*/
@@ -137,4 +133,27 @@ body#headlines {
 
 * {
     font-family: 'Open Sans', sans-serif;
+}
+
+/* Sortable tables */
+table.sortable {
+    margin-left: 2em;
+    width: 600px;
+    border-spacing: 0;
+}
+
+table.sortable tr {
+    border: 2px solid #ff9600;
+    padding: 0;
+}
+
+table.sortable th {
+    border: 2px solid #ff9600;
+}
+
+table.sortable thead {
+    background-color:#B5BAB6;
+    color:#000000;
+    font-weight: bold;
+    cursor: default;
 }

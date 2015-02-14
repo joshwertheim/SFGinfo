@@ -3,7 +3,7 @@
 {% autoescape true %}
 <html>
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <title>Current Roster</title>
         <link rel="stylesheet" type="text/css" href="../static/style.css">
         <link rel="apple-touch-icon" sizes="57x57" href="static/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="static/apple-touch-icon-60x60.png">
@@ -22,46 +22,43 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="static/mstile-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <script type="text/javascript" src="../js/sorttable.js"></script>
     </head>
     <body>
-        <div class="panel panel-primary">
           <!-- Default panel contents -->
-          <div class="panel-heading"><h3>Current Active Roster</h3></div>
-          <div class="panel-body">
-            
+          <div id="nav">
+              <ul id="link-list">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/news">Current News Headlines</a></li>
+              </ul>
           </div>
-
-            <div id="roster-content">
-              <!-- Table -->
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for player in players %}
-                        <tr>
-                            <th style="width: 40px;">
-                                <img src="{{ player.mugshot_url }}" />
-                                <br>
-                                <a href="{{ player.url }}">{{ player.first_last }}</a>
-                            </th>
-                            <th>{{ player.position }}</th>
-                            <th>{{ player.status_short }}</th>
-                        </tr>
-                        {% endfor %}
-                    </tbody>        
-                </table>
-            </div>
-        </div>
+            <table class="sortable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for player in players %}
+                    <tr>
+                        <th>
+                            <img src="{{ player.mugshot_url }}" />
+                            <br>
+                            <a href="{{ player.url }}">{{ player.first_last }}</a>
+                        </th>
+                        <th>{{ player.position }}</th>
+                        <th>{{ player.status_short }}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>        
+            </table>
         <div id="footer-main">
             <p>
                 <a href="https://github.com/joshwertheim/SFGinfo" target="_blank">SFGinfo</a> &mdash; By Joshua Wertheim
                 <br />
-                v1.0 &bull; 02/10/2015
+                v1.0 &bull; 02/13/2015
             </p>
         </div>
     </body>
