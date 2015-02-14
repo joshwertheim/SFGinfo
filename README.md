@@ -39,6 +39,10 @@ libraries:
 handlers:
 - url: /static
   static_dir: static
+  secure: always
+- url: /js
+  static_dir: js
+  secure: always
 
 - url: /.*
   script: main.application
