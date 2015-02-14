@@ -13,9 +13,6 @@ Python:
 * [webapp2](https://webapp-improved.appspot.com/)
 * [jinja2](http://jinja.pocoo.org/docs/dev/)
 
-HTML/CSS:
-* [Bootstrap](http://getbootstrap.com/)
-
 Database:
 * [Google Cloud Datastore (NoSQL)](https://cloud.google.com/datastore/docs)
 
