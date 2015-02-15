@@ -131,6 +131,12 @@ body#headlines {
     font-size: small;
 }
 
+.instruct {
+    margin-left: 2.2em;
+    margin-bottom: 0.5em;
+    font-size: 14px;
+}
+
 * {
     font-family: 'Open Sans', sans-serif;
 }
@@ -156,4 +162,8 @@ table.sortable thead {
     color:#000000;
     font-weight: bold;
     cursor: default;
+}
+
+table.sortable thead th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+    content: " \25B4\25BE" 
 }
