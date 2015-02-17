@@ -4,6 +4,11 @@ from google.appengine.ext import db
 from google.appengine.api import urlfetch
 
 class Player(db.Model):
+    """
+    docstring for Player
+    Responsible for setting up a Model entity
+    for the Google Cloud Datastore
+    """
     first_last = db.StringProperty()
     player_id = db.StringProperty()
     position = db.StringProperty()
@@ -13,23 +18,35 @@ class Player(db.Model):
     thumb = db.BooleanProperty()
 
 class Roster(object):
-    """docstring for Roster"""
+    """
+    docstring for Roster
+    Sends HTTP request for JSON at MLB API feed
+    Receives and prepares JSON data
+    Instantiates Player entities with metadata from JSON
+    Puts them into the Google Cloud Datastore, a NoSQL database
+    """
 
     loaded_json = ""
     
     def __init__(self):
         self.load_roster_url()
-        # self.prepare_players()
-
 
     def load_roster_url(self):
+        """
+        Instantiates a Feed object responsible for requesting
+        and beginning the parsing of the roster JSON at MLB.com
+        """
         ROSTER_URL = "http://www.mlb.com/lookup/json/named.roster_all.bam?team_id=137"
         feed = Feed(ROSTER_URL)
         feed.load_and_prepare()
         succeeded, self.loaded_json = feed.get_representation
-        # print feed.formatted_response_data
 
     def prepare_players(self):
+        """
+        Prepares all incoming Player entities from the JSON
+        Will attempt to figure out if a thumbnail exists
+        Puts resulting object into the database
+        """
         self.run = True
         roster_all = self.loaded_json["roster_all"]
         roster_results = roster_all["queryResults"]
