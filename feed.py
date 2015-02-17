@@ -2,16 +2,32 @@ import urllib2
 import json
 
 class Feed(object):
-    """Work in progress Feed object"""
+    """
+    docstring for Feed
+    Takes in a URL as a parameter
+    Sends a request for the data at URL
+    Begins processing the data
+    """
     url = ""
     response_data = ""
     formatted_response_data = ""
     json_representation = ""
 
     def __init__(self, url):
+        """
+        Initialize Feed object with a url
+
+        Args:
+            url (str): url to process
+        """
         self.url = url
 
     def load_and_prepare(self):
+        """
+        Tries to request the given url
+        Uses a try/except block to catch exceptions,
+        such as no data existing.
+        """
         try:
             self.response_data = urllib2.urlopen(self.url)
         except:

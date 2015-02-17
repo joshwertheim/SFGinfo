@@ -2,7 +2,6 @@
 {% autoescape true %}
 
 <html>
-
 <head>
     <meta charset="utf-8"/>
     <link type="text/css" rel="stylesheet" href="static/style.css"/>
@@ -28,28 +27,33 @@
 
 <body>
     <div id="main-page">
+        <!-- Begin navbar -->
         <div id="nav">
             <ul id="link-list">
                 <li><a href="{{ news_url }}">Latest Giants News</a></li>
                 <li><a href="{{ roster_url }}">Current Active Roster</a></li>
             </ul>
         </div>
-        
+        <!-- End navbar -->
     </div>
 
+    <!-- Begin SFGiants twitter stream embed -->
     <div id="main-page-twitter-feed">
         <a class="twitter-timeline" height="450" data-dnt="true" href="https://twitter.com/SFGiants" data-widget-id="563954167098523649">Tweets by @SFGiants</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
         </script>
     </div>
+    <!-- End twitter embed -->
 
+    <!-- Begin footer -->
     <div id="footer-main">
-            <p>
-                <a href="https://github.com/joshwertheim/SFGinfo" target="_blank">SFGinfo</a> &mdash; By Joshua Wertheim
-                <br />
-                v1.0 &bull; 02/13/2015
-            </p>
-        </div>
+        <p>
+            <a href="https://github.com/joshwertheim/SFGinfo" target="_blank">SFGinfo</a> &mdash; By Joshua Wertheim
+            <br />
+            v1.0 &bull; 02/13/2015
+        </p>
+    </div>
+    <!-- End footer -->
 </body>
 </html>
 {% endautoescape %}

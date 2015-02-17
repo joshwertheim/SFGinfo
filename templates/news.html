@@ -23,14 +23,19 @@
         <meta name="theme-color" content="#ffffff">
     </head>
     <body id="headlines">
+        <!-- Begin navbar -->
         <div id="nav">
             <ul id="link-list">
                 <li><a href="/">Home</a></li>
                 <li><a href="/roster">Current Active Roster</a></li>
             </ul>
         </div>
-        <h1>{{ message }}</h1>
+        <!-- End navbar -->
+        <h1>{{ message }}</h1> <!-- Can just write it in -->
+        
         <hr>
+
+        <!-- Begin list of headlines -->
         <div id="headline-block">
             {% for story in stories %}
                 <h3 id="headlines-h"><span>{{ story.althead }}</span></h3>
@@ -39,8 +44,11 @@
                 <hr>
             {% endfor %}
         </div>
+        <!-- End list of headlines -->
 
     </body>
+
+    <!-- Begin footer section -->
     <div id="footer-main">
         <p>
             <a href="https://github.com/joshwertheim/SFGinfo" target="_blank">SFGinfo</a> &mdash; By Joshua Wertheim
@@ -48,5 +56,7 @@
             v1.0 &bull; 02/13/2015
         </p>
     </div>
+    <!-- End footer section -->
+    
 </html>
 {% endautoescape %}

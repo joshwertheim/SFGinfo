@@ -1,5 +1,10 @@
 class NewsStory(object):
-    """docstring for NewsStory"""
+    """
+    docstring for NewsStory
+    Currently has minimum setup for metadata for stories
+    Class will be expanded later when more news sources
+    are added
+    """
     
     althead = ""
     blurb = ""

@@ -25,36 +25,46 @@
         <script type="text/javascript" src="../js/sorttable.js"></script>
     </head>
     <body>
-          <!-- Default panel contents -->
-          <div id="nav">
-              <ul id="link-list">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/news">Current News Headlines</a></li>
-              </ul>
-          </div>
-            <p class="instruct">Sort by column in either descending or ascending order.</p>
-            <table class="sortable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for player in players %}
-                    <tr>
-                        <th>
-                            <img src="{{ player.mugshot_url }}" />
-                            <br>
-                            <a href="{{ player.url }}">{{ player.first_last }}</a>
-                        </th>
-                        <th>{{ player.position }}</th>
-                        <th>{{ player.status_short }}</th>
-                    </tr>
-                    {% endfor %}
-                </tbody>        
-            </table>
+        <!-- Begin navbar -->
+        <div id="nav">
+            <ul id="link-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">Current News Headlines</a></li>
+            </ul>
+        </div>
+        <!-- End navbar -->
+
+        <p class="instruct">Sort by column in either descending or ascending order.</p>
+
+        <!-- 
+        Begin table holding roster of players 
+        Can sort by column using sorttable.js
+        -->
+        <table class="sortable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                <tr>
+                    <th>
+                        <img src="{{ player.mugshot_url }}" />
+                        <br>
+                        <a href="{{ player.url }}">{{ player.first_last }}</a>
+                    </th>
+                    <th>{{ player.position }}</th>
+                    <th>{{ player.status_short }}</th>
+                </tr>
+                {% endfor %}
+            </tbody>        
+        </table>
+        <!-- End roster table -->
+
+        <!-- Begin footer -->
         <div id="footer-main">
             <p>
                 <a href="https://github.com/joshwertheim/SFGinfo" target="_blank">SFGinfo</a> &mdash; By Joshua Wertheim
@@ -62,6 +72,7 @@
                 v1.0 &bull; 02/13/2015
             </p>
         </div>
+        <!-- End footer -->
     </body>
 </html>
 {% endautoescape %}
