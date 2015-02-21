@@ -1,4 +1,5 @@
 import os
+import time
 import urllib
 import json
 
@@ -18,19 +19,28 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+
+def getplayers():
+    r = Roster()
+    r.prepare_players()
+    q = Player.all()
+    q.order('first_last')
+    size = q.count()
+    players = q.fetch(limit=size)
+    return players
+
+
 class RosterPage(webapp2.RequestHandler):
     """docstring for RosterPage"""
     def get(self):
         r = Roster()
         q = Player.all()
         q.order('first_last')
-        players = q.fetch(limit=62)
+        size = q.count()
+        players = q.fetch(limit=size)
+
         if not players:
-            print 'testing'
-            r.prepare_players()
-            q = Player.all()
-            q.order('first_last')
-            players = q.fetch(limit=62)
+            players = getplayers()
 
         template_values = {
             'players': players,
@@ -72,6 +82,17 @@ class NewsPage(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('templates/news.html')
         self.response.write(template.render(template_values))
 
+class CacheCronPage(webapp2.RequestHandler):
+    """docstring for CacheCronPage"""
+
+    def get(self):
+        q = Player.all()
+        size = q.count()
+        players = q.fetch(limit=size)
+        db.delete(players)
+        time.sleep(3)
+        getplayers()
+
 class LandingPage(webapp2.RequestHandler):
     """docstring for LandingPage"""
     
@@ -91,4 +112,5 @@ application = webapp2.WSGIApplication([
     ('/', LandingPage),
     ('/news', NewsPage),
     ('/roster', RosterPage),
+    ('/roster_refresh', CacheCronPage),
 ], debug=True)
